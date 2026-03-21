@@ -3,13 +3,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
 
 :root {
-    --navy-main-background: hsl(233, 47%, 7%);
-    --blue-card-background: hsl(244, 37%, 16%);
-    --purple-accent: hsl(277, 64%, 61%);
+    --navy-main-background: #090b1a;
+    --blue-card-background: #1c1a38;
+    --purple-accent: #aa5cdb;
 
-    --white-main-heading-stats: hsl(0, 0%, 100%);
-    --white-main-paragraph: hsla(0, 0%, 100%, 0.75);
-    --white-stat-headings: hsla(0, 0%, 100%, 0.6);
+    --white-main-heading-stats: #ffffff;
+    --white-main-paragraph: #ffffffbf;
+    --white-stat-headings: #ffffff99;
+
+    --font-primary: 'Inter';
+    --font-secondary: 'Lexend Deca';
 
 }
 
@@ -17,4 +20,99 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary), Arial, Helvetica, sans-serif;
+    font-size: 0.93rem;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--navy-main-background);
+}
+
+.content {
+    display: flex;
+    flex-direction: row-reverse;
+    max-width: 1400px;
+    width: 100%;
+    height: 600px;
+    color: var(--white-main-heading-stats);
+    border-radius: 15px;
+    background-color: var(--blue-card-background);
+    overflow: hidden;
+}
+
+.content__img {
+    position: relative;
+    height: 100%;
+    width: 50%;
+    background-color: var(--blue-card-background);
+    background-image: url('../images/image-header-desktop.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.content__img__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #58188099;
+}
+
+.content__text {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    height: 100%;
+    width: 50%;
+    padding: 100px;
+}
+
+.content__text > h1 {
+    font-size: 3rem;
+}
+
+.content__text > h1 > span {
+    color: var(--purple-accent);
+}
+
+.content__text > p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--white-main-paragraph);
+}
+
+.content__text__info {
+    font-family: var(--font-secondary), Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.content__text__info article {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.content__text__info__number {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.content__text__info__desc {
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--white-stat-headings);
+    letter-spacing: 0.1rem;
 }
