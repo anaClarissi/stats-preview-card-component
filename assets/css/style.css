@@ -23,6 +23,7 @@
 }
 
 body {
+    min-height: 100vh;
     font-family: var(--font-primary), Arial, Helvetica, sans-serif;
     font-size: 0.93rem;
 }
@@ -32,8 +33,9 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: var(--navy-main-background);
+    padding: 20px;
 }
 
 .content {
@@ -41,11 +43,11 @@ body {
     flex-direction: row-reverse;
     max-width: 1400px;
     width: 100%;
-    height: 600px;
+    max-height: 600px;
+    height: 100vh;
     color: var(--white-main-heading-stats);
     border-radius: 15px;
     background-color: var(--blue-card-background);
-    overflow: hidden;
 }
 
 .content__img {
@@ -56,6 +58,9 @@ body {
     background-image: url('../images/image-header-desktop.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0 15px 15px 0;
+    overflow: hidden;
 }
 
 .content__img__background {
@@ -115,4 +120,86 @@ body {
     text-transform: uppercase;
     color: var(--white-stat-headings);
     letter-spacing: 0.1rem;
+}
+
+@media (max-width: 1460px) {
+
+    .content {
+        max-width: 980px;
+        max-height: 500px;
+    }
+
+    .content__text {
+        gap: 20px;
+        padding: 70px;
+    }
+    
+    .content__text > h1 {
+        font-size: 2rem;
+    }
+
+    .content__text > p {
+        font-size: 1rem;
+    }
+
+    .content__text__info article {
+        gap: 5px;
+    }
+
+    .content__text__info__number {
+        font-size: 1.9rem;
+    }
+
+    .content__text__info__desc {
+        font-size: 0.9rem;
+    }
+
+}
+
+@media (max-width: 960px) {
+
+    .content {
+        max-height: none;
+        height: auto;
+        max-width: 500px;
+        flex-direction: column;
+    }
+
+    .content__img {
+        height: 250px;
+        width: 100%;
+        border-radius: 15px 15px 0 0;
+        background-image: url('../images/image-header-mobile.jpg');
+    }
+
+    .content__text {
+        align-items: center;
+        flex: auto;
+        height: auto;
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+        font-family: 0.9rem;
+    }
+
+    .content__text__info {
+        flex: 1;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 0;
+    }
+
+
+    .content__text h1 {
+        font-size: 1.8rem;
+    }
+
+    .content__text > p {
+        font-size: 0.8rem;
+    }
+
+    .content__text__info__number {
+        font-size: 1.5rem;
+    }
+
 }
